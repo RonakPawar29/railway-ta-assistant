@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save, User, MapPin, Briefcase, CreditCard, Hash, Calendar } from 'lucide-react';
+import { Save, User, MapPin, Briefcase, CreditCard, Hash, Calendar, LayoutDashboard } from 'lucide-react';
 import './ProfileSetup.css';
 
 const ProfileSetup = ({ initialData, onSave }) => {
@@ -21,7 +21,19 @@ const ProfileSetup = ({ initialData, onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(formData);
+    const levelNum = parseInt(formData.level);
+    let baseTaRate = 500;
+    if (levelNum >= 9) baseTaRate = 900;
+    else if (levelNum >= 6) baseTaRate = 800;
+    // Enrich with alias fields so Dashboard/PDF/Calculator all work correctly
+    onSave({
+      ...formData,
+      fullName: formData.name,
+      headquarter: formData.station,
+      baseTaRate: baseTaRate.toString(),
+      payScale: formData.level,
+      gradePay: formData.basicPay
+    });
   };
 
   return (
