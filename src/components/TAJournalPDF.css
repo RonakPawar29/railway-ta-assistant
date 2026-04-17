@@ -1,0 +1,62 @@
+.s4-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif; /* Traditional look */
+}
+
+.s4-header h1 {
+  letter-spacing: 2px;
+}
+
+.s4-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  text-align: left;
+  font-size: 13px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 10px 0;
+}
+
+.s4-table th {
+  background: #f0f0f0 !important;
+  font-weight: bold;
+}
+
+.s4-table td {
+  padding: 4px;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+  
+  .s4-container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .s4-table {
+    border: 1.5px solid black !important;
+  }
+
+  .s4-table th, 
+  .s4-table td {
+    border: 1px solid black !important;
+  }
+
+  /* Force background colors in print */
+  .bg-gray-100 {
+    background-color: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}

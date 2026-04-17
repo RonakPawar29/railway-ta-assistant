@@ -1,0 +1,47 @@
+.profile-setup {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-group input, 
+.input-group select {
+  padding: 12px 16px;
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #f8fafc;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 51, 153, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #a0aec0;
+}
+
+@media (max-width: 768px) {
+  .profile-setup {
+    padding-bottom: 80px;
+  }
+}

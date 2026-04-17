@@ -1,0 +1,212 @@
+/* Premium Dashboard Styles */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+}
+
+/* Analytics Grid */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.card-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.badge {
+  background: var(--primary-light);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Chart Styles */
+.chart-wrapper {
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 40px;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+}
+
+.chart-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bar-fill {
+  width: 70%;
+  background: linear-gradient(to top, var(--primary), var(--primary-light));
+  border-radius: 6px 6px 0 0;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+.chart-bar-container:hover .bar-fill {
+  opacity: 1;
+  transform: scaleX(1.1);
+  box-shadow: 0 0 15px rgba(0, 51, 153, 0.3);
+}
+
+.chart-bar-container.active .bar-fill {
+  opacity: 1;
+  background: linear-gradient(to top, var(--accent), #ff8080);
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
+}
+
+.month-label {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Tooltip */
+.bar-tooltip {
+  position: absolute;
+  top: -45px;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  pointer-events: none;
+  z-index: 10;
+  text-align: center;
+}
+
+.chart-bar-container:hover .bar-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Summary Card */
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.rate-info {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Shortcuts */
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.shortcut-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.shortcut-card:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: var(--primary);
+}
+
+.shortcut-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.shortcut-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+}
