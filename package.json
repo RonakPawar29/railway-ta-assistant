@@ -1,0 +1,30 @@
+{
+  "name": "railway-ta-mobile",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "latest",
+    "expo": "^54.0.0",
+    "expo-constants": "latest",
+    "expo-linking": "latest",
+    "expo-print": "latest",
+    "expo-router": "^6.0.0",
+    "expo-sharing": "latest",
+    "expo-status-bar": "latest",
+    "lucide-react-native": "latest",
+    "react": "^19.0.0",
+    "react-native": "^0.81.0",
+    "react-native-safe-area-context": "latest",
+    "react-native-screens": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
